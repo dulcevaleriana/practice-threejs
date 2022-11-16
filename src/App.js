@@ -3,12 +3,14 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 
-import Model from './ModelComponent/Model';
+import Untitled from './ModelComponent/Untitled';
 
 import logo from './logo.svg';
 import './App.css';
 
+
 export default function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,18 +28,22 @@ export default function App() {
         </a>
       </header>
       <Canvas
-          camera={{ position: [2, 0, 12.25], fov: 15 }}
+          camera={{
+            position: [6, 6, 6],
+            fov: 15,
+            far: 1000
+          }}
           style={{
             backgroundColor: '#111a21',
             width: '100vw',
             height: '100vh',
           }}
       >
-          <ambientLight intensity={1.25} />
-          <ambientLight intensity={0.1} />
-          <directionalLight intensity={0.4} />
+          <pointLight position={[2, 2, 2]} />
+          <ambientLight intensity={0.25} />
+          <directionalLight intensity={0.2} />
           <Suspense fallback={null}>
-              <Model position={[0.025, -0.9, 0]} onClick={()=>alert('you can click here using a props onClick too')}/>
+              <Untitled position={[2, -0.4, 0]} onClick={()=>alert('Untitled')}/>
               <Stars saturation={true} count={40000} speed={2} />
           </Suspense>
           <OrbitControls />

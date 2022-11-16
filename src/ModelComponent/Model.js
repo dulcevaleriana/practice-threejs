@@ -6,8 +6,8 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  // const { nodes, materials } = useGLTF('/model.glb')
-  const { nodes, materials } = useGLTF('https://api.readyplayer.me/v1/avatars/63711e08777dc969696d71ab.glb')
+  const { nodes, materials } = useGLTF('/model.glb')
+  // const { nodes, materials } = useGLTF('https://api.readyplayer.me/v1/avatars/63711e08777dc969696d71ab.glb')
   return (
     <group {...props} dispose={null} onClick={props.onClick}>
       <primitive object={nodes.Hips} />
@@ -25,5 +25,5 @@ export default function Model(props) {
   )
 }
 
-// useGLTF.preload('/model.glb')
-useGLTF.preload('https://api.readyplayer.me/v1/avatars/63711e08777dc969696d71ab.glb')
+useGLTF.preload('/model.glb')
+// useGLTF.preload('https://api.readyplayer.me/v1/avatars/63711e08777dc969696d71ab.glb')
