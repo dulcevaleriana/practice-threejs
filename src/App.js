@@ -39,17 +39,13 @@ export default function App() {
             height: '100vh',
           }}
       >
-          <pointLight position={[2, 2, 2]} />
-          <ambientLight intensity={0.25} />
-          <directionalLight intensity={0.2} />
+          <pointLight position={[3, 3, 3]} />
+          <ambientLight intensity={0.2} />
           <Suspense fallback={null}>
               <Untitled position={[2, -0.4, 0]} onClick={()=>alert('Untitled')}/>
               <Stars saturation={true} count={40000} speed={2} />
           </Suspense>
           <OrbitControls />
-          <EffectComposer>
-            <Bloom mipmapBlur luminanceThreshold={1} />
-          </EffectComposer>
       </Canvas>
     </div>
   );
