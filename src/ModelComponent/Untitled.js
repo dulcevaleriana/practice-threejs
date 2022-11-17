@@ -12,7 +12,7 @@ export default function Model(props) {
     actions['Armature|mixamo.com|Layer0'].play();
   });
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     group.current.rotation.x = 45;
     group.current.rotation.y = 44.2;
     group.current.rotation.z = 50;
